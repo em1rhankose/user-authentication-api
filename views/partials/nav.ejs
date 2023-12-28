@@ -1,0 +1,40 @@
+<nav class="navbar navbar-dark bg-success navbar-expand-lg">
+    <div class="container">
+        <a href="/" class="navbar-brand">User Authentication APİ</a>
+        
+        <ul class="navbar-nav me-auto">
+            <% if (isAuth) { %>
+                <li class="nav-item">
+                    <a href="/roles" class="nav-link">Roller</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/users" class="nav-link">Üyeler</a>
+                </li>
+            <% } %>
+        </ul>
+        
+        <ul class="navbar-nav ms-auto">
+
+            <% if (isAuth) { %>
+            
+            <li class="nav-item">
+                <a href="/" class="nav-link"><%= fullname %></a>
+            </li>
+            <li class="nav-item">
+                <a href="/auth/logout" class="nav-link">Logout</a>
+            </li>
+
+            <% }else{ %>
+
+            <li class="nav-item">
+                <a href="/auth/login" class="nav-link">Login</a>
+            </li>
+            <li class="nav-item">
+                <a href="/auth/register" class="nav-link">Register</a>
+            </li>
+
+            <% } %>
+
+        </ul>
+    </div>
+</nav>
